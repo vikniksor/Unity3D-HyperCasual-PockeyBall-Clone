@@ -31,8 +31,16 @@ public class Ball : MonoBehaviour
             {
                 if (hitInfo.collider.TryGetComponent(out Block block))
                 {
+                    
+                }
+                else if (hitInfo.collider.TryGetComponent(out Segment segment))
+                {
                     _rigidbody.isKinematic = true;
                     _rigidbody.velocity = Vector3.zero;
+                }
+                else if (hitInfo.collider.TryGetComponent(out Finish finish))
+                {
+
                 }
             }
         }
